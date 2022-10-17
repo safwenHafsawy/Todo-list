@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Cambay:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Vadodara&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@300&display=swap");
+
+//colors
+$bg-color: #0a100d;
+$main-color: #902923;
+$secondary-color: #d6d5c9;
+$completed-task: #377771;
+
+//fonts
+$header-font: "Cambay", sans-serif;
+$secondary-font: "Hind Vadodara", sans-serif;
+$third-font: "Catamaran", sans-serif;
+
+//mixins
+@mixin bntStyle($backg-color, $height_p: 5%) {
+  background-color: $backg-color;
+  border: none;
+  width: 20%;
+  height: $height_p;
+  color: $secondary-color;
+  border-radius: 12px;
+  margin: 10px;
+  font-weight: bold;
+  border: 1px solid $secondary-color;
+}
+
+//animation
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

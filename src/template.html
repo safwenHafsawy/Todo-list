@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <main>
+      <div id="today-tasks">
+        <h1>Tasks of the day :</h1>
+        <p id="empty-warning">
+          Click <a href="#add-tasks">Here</a> to create new task
+        </p>
+        <div id="task-list"><h2 id="no-task">No Task yet ! Go ahead and add some</h2></div>
+        <button class="disabledBtn" id="clear-finished">Clear Finished</button>
+      </div>
+      <div id="add-tasks">
+        <h2>add a new task</h2>
+        <p id="title-empty" class="hiddenWarning">task title cannot be empty</p>
+        <input type="text" id="taskTitle" placeholder="Task title" required />
+        <textarea
+          id="taskDescription"
+          placeholder="task description"
+          cols="30"
+          rows="8"
+        ></textarea>
+        <button id="createTask" class="addBtn">Create Task</button>
+        <button id="clearTask" class="addBtn">Clear</button>
+        <button id="ckeckTasks" class="addBtn">Check My Tasks</button>
+      </div>
+    </main>
+  </body>
+</html>

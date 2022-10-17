@@ -1,0 +1,168 @@
+@import "./variables";
+
+//main-styling
+body {
+  color: $secondary-color;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  bottom: 0;
+  animation: fadein 500ms linear;
+  
+  #today-tasks {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../assets/black_bg.svg");
+    flex-grow: 3;
+    border-bottom: 10px solid $secondary-color;
+
+    & > h2 {
+      font-family: $header-font;
+    }
+
+    #empty-warning {
+      font-family: $third-font;
+      font-weight: bolder;
+
+      & > a {
+        color: $main-color;
+        font-family: $secondary-font;
+        text-decoration: none;
+
+        &:visited,
+        &:active,
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+
+    #task-list {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      #no-task {
+        font-family: $secondary-font;
+        font-weight: bold;
+      }
+
+      .task {
+        background-color: $secondary-color;
+        color: $bg-color;
+        animation: fadein 1s linear;
+        border-radius: 20px;
+        border: 1px solid $bg-color;
+        margin: 5px;
+        padding: 2px 0;
+        cursor: pointer;
+        width: 50%;
+
+        .task-title {
+          font-weight: bold;
+          padding-bottom: 2px;
+        }
+
+        .task-desc {
+          font-family: $third-font;
+        }
+      }
+
+      .completed {
+        text-decoration: line-through;
+        opacity: 0.8;
+        background-color: $completed-task;
+      }
+    }
+
+    .disabledBtn {
+      visibility: hidden;
+    }
+
+    .showedBtn {
+      visibility: visible;
+      @include bntStyle($main-color, 30px);
+
+      &:active {
+        background-color: $secondary-color;
+        border: 1px solid $main-color;
+        color: $main-color;
+      }
+    }
+  }
+
+  #add-tasks {
+    background-image: url("../assets/red_bg.svg");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3%;
+    height: 90vh;
+
+    & > h2 {
+      font-family: $header-font;
+    }
+
+    .hiddenWarning {
+      visibility: hidden;
+    }
+
+    .shownWarning {
+      visibility: visible;
+      font-family: $third-font;
+      color: $bg-color;
+      animation: fadein 500ms infinite;
+      font-weight: bold;
+    }
+
+    & > input,
+    textarea {
+      width: 30%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      border: none;
+      transition: all 300ms;
+      text-align: center;
+      border: 3px solid $bg-color;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        transform: scaleX(1.1);
+      }
+    }
+
+    input {
+      height: 30px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .addBtn {
+      @include bntStyle($bg-color);
+
+      &:active {
+        background-color: $main-color;
+        border: 1px solid $secondary-color;
+      }
+    }
+  }
+}
