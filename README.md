@@ -1,6 +1,6 @@
 # TODO list
 
-Foobar is a web app for taking notes creating using HTML, SASS and javascript.
+TODO list is a web app for taking notes creating using HTML, SASS and javascript.
 
 ## Installation
 
